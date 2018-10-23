@@ -694,7 +694,7 @@
     } else {
       this.obj = this.ax.baseaxes.append("text");
     }
-    this.obj.attr("class", "mpld3-text").text(this.text).style("text-anchor", this.props.h_anchor).style("dominant-baseline", this.props.v_baseline).style("font-size", this.props.fontsize).style("fill", this.props.color).style("opacity", this.props.alpha);
+    this.obj.attr("class", "mpld3-text").text(this.text).style("text-anchor", this.props.h_anchor).style("dominant-baseline", this.props.v_baseline).style("font-size", this.props.fontsize+"px").style("fill", this.props.color).style("opacity", this.props.alpha);
     this.applyTransform();
   };
   mpld3_Text.prototype.elements = function(d) {
@@ -1339,7 +1339,7 @@
   MousePositionPlugin.prototype.draw = function() {
     var fig = this.fig;
     var fmt = d3.format(this.props.fmt);
-    var coords = fig.canvas.append("text").attr("class", "mpld3-coordinates").style("text-anchor", "end").style("font-size", this.props.fontsize).attr("x", this.fig.width - 5).attr("y", this.fig.height - 5);
+    var coords = fig.canvas.append("text").attr("class", "mpld3-coordinates").style("text-anchor", "end").style("font-size", this.props.fontsize+"px").attr("x", this.fig.width - 5).attr("y", this.fig.height - 5);
     for (var i = 0; i < this.fig.axes.length; i++) {
       var update_coords = function() {
         var ax = fig.axes[i];
