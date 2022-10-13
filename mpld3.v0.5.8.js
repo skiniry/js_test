@@ -1618,10 +1618,8 @@ mpld3_BoxZoomPlugin.prototype.draw = function() {
       "fill-opacity": 0,
       stroke: "#999"
     });
-    var brush = this.fig.getBrush();
     this.enable = function() {
       this.fig.showBrush(this.extentClass);
-      brush.on("brushend", brushend.bind(this));
       this.enabled = true;
     };
     this.disable = function() {
@@ -1631,15 +1629,6 @@ mpld3_BoxZoomPlugin.prototype.draw = function() {
     this.toggle = function() {
       this.enabled ? this.disable() : this.enable();
     };
-    function brushend(d) {
-      if (this.enabled) {
-        var extent = brush.extent();
-        if (!brush.empty()) {
-          d.set_axlim([ extent[0][0], extent[1][0] ], [ extent[0][1], extent[1][1] ]);
-        }
-      }
-      d.axes.call(brush.clear());
-    }
     this.disable();
   };
 
