@@ -1623,7 +1623,6 @@ mpld3_BoxZoomPlugin.prototype.draw = function() {
       this.enabled = true;
     };
     this.disable = function() {
-      this.fig.hideBrush(this.extentClass);
       this.enabled = false;
     };
     this.toggle = function() {
